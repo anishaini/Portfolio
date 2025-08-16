@@ -116,15 +116,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-# settings.py
-
-STATIC_URL = '/static/'  # URL jo browser me dikhega
-
-# Development ke liye
-STATICFILES_DIRS = [BASE_DIR / 'static']  # yahan aapke app ki static files rakhi hain
-
-# Production ke liye (Render, Heroku etc.)
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # collectstatic yahan copy karega
+STATIC_URL = '/static/'
+STATIC_DIR=BASE_DIR/'static'
+STATICFILES_DIRS=[STATIC_DIR]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
