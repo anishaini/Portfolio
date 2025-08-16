@@ -24,7 +24,7 @@ TEMPLATES_DIR=BASE_DIR/'templates'
 SECRET_KEY = 'django-insecure-zijdpn&bz(d7e-$149pat(8fei2(a=6fs5wbuh%#g7=(!z6&f#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['portfolio-m5l8.onrender.com']
 
@@ -116,9 +116,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_DIR=BASE_DIR/'static'
-STATICFILES_DIRS=[STATIC_DIR]
+# settings.py
+
+STATIC_URL = '/static/'  # URL jo browser me dikhega
+
+# Development ke liye
+STATICFILES_DIRS = [BASE_DIR / 'static']  # yahan aapke app ki static files rakhi hain
+
+# Production ke liye (Render, Heroku etc.)
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # collectstatic yahan copy karega
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
